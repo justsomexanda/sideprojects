@@ -11,10 +11,29 @@ Der Code liegt in meiner eigenen Forge:
 | Kronland, Frontend | https://forgejo.blax.at/blax-software/game-village-politics-frontend | https://village.blax.at |
 | Logigate | https://forgejo.blax.at/blax-software/logigate | https://logicate.blax.at |
 
-Die Laravel-Pakete, die Kronland benutzt, liegen hier auf GitHub:
-[laravel-websockets](https://github.com/blax-software/laravel-websockets),
-[laravel-workkit](https://github.com/blax-software/laravel-workkit),
-[docker-laravel](https://github.com/blax-software/docker-laravel).
+## Laravel-Pakete
+
+Was in mehreren Projekten vorkommt, wandert bei mir in ein Paket. Die hier laufen in Produktion,
+acht davon liegen auf Packagist:
+
+| Paket | Was es macht |
+|---|---|
+| [laravel-websockets](https://github.com/blax-software/laravel-websockets) | WebSocket-Server mit nativen Controllern statt Broadcast-Events. Kronland und Learn ATC laufen darauf. |
+| [laravel-ws](https://github.com/blax-software/laravel-ws) | Nachfolger auf dem ReactPHP-Kernel: RFC6455 auf der geteilten Event-Loop, Message-Handler, Channel-Pub/Sub. |
+| [laravel-webrtc](https://github.com/blax-software/laravel-webrtc) | WebRTC-Signaling auf derselben Loop, mit austauschbarer Media-Engine. |
+| [reactphp-kernel](https://github.com/blax-software/reactphp-kernel) | Der protokollunabhängige Unterbau darunter: Loop-Lebenszyklus, Socket-Accept, IPC, Signalbehandlung, sauberes Herunterfahren. |
+| [laravel-shop](https://github.com/blax-software/laravel-shop) | Headless E-Commerce mit Lagerführung, Stripe und Produktaktionen. |
+| [laravel-invoicing](https://github.com/blax-software/laravel-invoicing) | Rechnungen mit lückenloser Nummerierung, USt. oder österreichischer Kleinunternehmerregelung, lokalisierte PDFs. |
+| [laravel-files](https://github.com/blax-software/laravel-files) | Dateiverwaltung: hochladen, optimieren, ausliefern, an jedes Model hängen. |
+| [laravel-mail](https://github.com/blax-software/laravel-mail) | SMTP und IMAP pro Postfach, Nachrichten als Threads, Öffnungs- und Klick-Tracking. |
+| [laravel-addresses](https://github.com/blax-software/laravel-addresses) | Adressen weltweit, von der Flurbezeichnung bis zur Zimmernummer im Hochhaus. |
+| [laravel-roles](https://github.com/blax-software/laravel-roles) | Rollen und Rechte, auch mit Ablaufdatum. |
+| [laravel-workkit](https://github.com/blax-software/laravel-workkit) | Die Helfer, die sonst in jedem Projekt neu entstehen. |
+| [docker-laravel](https://github.com/blax-software/docker-laravel) | PHP- und Nginx-Images für Laravel, PHP 8.0 bis 8.4, auf Docker Hub. |
+
+Kronland zieht `laravel-websockets`, `laravel-workkit` und das Image `blaxsoftware/laravel`
+daraus. Wer wissen will, wie ich Code schreibe, den niemand außer mir liest, schaut am besten
+hier hinein.
 
 ## Wie es dazu kam
 
@@ -111,6 +130,24 @@ müssen Projekte aus älteren Releases weiter laden und identisch rechnen. `test
 sichert das mit eingefrorenen Fixtures ab. Neue Projektfelder sind optional mit Default.
 
 ---
+
+---
+
+## Weitere Arbeiten, die öffentlich laufen
+
+Nicht alles davon ist mein Code allein, und nicht alles ist quelloffen. Die Seiten laufen aber
+live, man kann sie anschauen:
+
+- **[learn-atc.com](https://www.learn-atc.com)**: Trainingsplattform für Flugverkehrskontrolle.
+  Laravel und Nuxt, WebSockets, LLM in Produktion mit RAG und Finetuning. Mein größtes Projekt,
+  ein Joint Venture, ich mache dort die technische Leitung.
+- **[autism.blax.at](https://autism.blax.at)**: Verzeichnis für Autismus-Hilfe in Österreich,
+  Beratung, Diagnose, Therapie, Gruppen, Arbeit, Termine, dazu zwei im Browser ausgewertete
+  Selbsttests. Nuxt 4, Atkinson Hyperlegible, kein Tracking, keine Drittanfragen, bewusst ohne
+  Bewegung im Layout. Eigenes Projekt, noch nicht öffentlich beworben.
+- **[holzschlaegerung-hochstoeger.at](https://www.holzschlaegerung-hochstoeger.at)**:
+  Kundenseite, Nuxt 4. Den Quellcode lege ich nicht offen, das ist nicht meiner allein.
+- **[blax.at](https://www.blax.at)**: die eigene Firmenseite, Nuxt 4, zweisprachig.
 
 ## KI-Werkzeuge und Vorgehen
 
